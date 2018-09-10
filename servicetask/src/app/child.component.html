@@ -1,0 +1,33 @@
+<table >
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Technology
+        </th>
+        <th>
+            Company    
+        </th>
+    </tr>
+    <td>
+        <tr *ngFor="let key of received">
+
+            {{key.Name}}
+        </tr>
+    </td>
+    <td>
+        <tr *ngFor="let key of received">
+
+            {{key.Tech}}
+        </tr>
+    </td>
+    <td>
+        <tr *ngFor="let key of received">
+
+            {{key.Company}}
+        </tr>
+    </td>
+<td><button>edit</button></td>
+</table>
+

@@ -1,0 +1,78 @@
+<!--Method 1 :using [(ngModel)] -->
+<!-- See video for method 1 : https://coursetro.com/posts/code/108/Angular-5-Interpolation,-Property-Binding-&-Event-Binding-Tutorial -->
+<!-- <span> userid:
+    <input type="text" [(ngModel)]="userid"> </span>
+<span> name:
+    <input type="text" [(ngModel)]="name">
+</span>
+<span> technology:
+    <input type="text" [(ngModel)]="technology">
+</span>
+<span>
+    <button (click)="onChange()">Submit</button>
+</span> -->
+
+<!-- Method 2: using template refernce -->
+<!-- See video for method 2
+Also refer : C:\Users\Ravi\Desktop\HTML\Angular : childtoparent recording
+ -->
+ 
+ <span>
+    <button (click)="showDetails()">Show Employees</button>
+</span><br><br>
+<label for="name">Name: </label>
+  <input type="text" id="name" [(ngModel)]="ref1"> 
+        
+  <label for="tech">Technology: </label>
+        <input type="text" id="tech" [(ngModel)]="ref2">
+    
+        <label for="company">Company: </label>
+        <input type="text" id="company" [(ngModel)]="ref3">
+    
+    <span>
+        <button  (click)="onSubmit()">Add Employee</button>
+    </span>
+
+    
+<br>
+
+<br>
+<br>
+
+<table >
+    <tr >
+        <th>
+            Name
+        </th>
+        <th>
+            Technology
+        </th>
+        <th>
+            Company    
+        </th>
+        
+    </tr>
+     <tr *ngFor="let key of updateemployee;let i = index; trackBy: customTrackBy" >
+    <td >
+         {{key.Name}}
+    </td>
+    <td>
+         {{key.Tech}}
+       
+    </td>
+    <td>
+           {{key.Company}}
+       
+    </td>
+    <td><button (click)="onEdit(i)">edit</button></td>
+    </tr>
+
+</table>
+
+
+<!-- <app-child [received]="employeeslist"></app-child> -->
+<!-- template refernce variable eg -->
+<!-- 
+<input type="text" #refe><br/>
+<button (click)="customMethod()">Add</button>
+<p>{{custom}}</p> -->
